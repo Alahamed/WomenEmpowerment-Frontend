@@ -1,9 +1,27 @@
 
-<ul *ngFor="let u of PostList">
+<Div class="d-grid gap-2 col-6 mx-auto" role="button" tabindex="0">
+  <Div>
+    <button   routerLink="/home/acceuil/create-post"  style="-webkit-box-orient: vertical;border-radius: 20px; -webkit-line-clamp: 2; display: -webkit-box"> Que voulez vous dire ?    </button>
+  </Div>
+  <Div  style="border-radius: 20px"> </Div>
+</Div>
+<router-outlet></router-outlet>
 
+
+
+<ul *ngFor="let u of PostList">
+<Div style="margin-left: 330px ; border: #0f3d81 ; background-color: #0e51cb ; width: 330px " >
+  <button type="button" class="btn-close" aria-label="hide post" (click)="deletePost(u.idPublication)"></button>
   <li> {{u.date}}</li>
   <li> {{u.post}}</li>
   <li> {{u.state}}</li>
   <li> {{u.time}}</li>
+  <button  (click)="updatepost(u.idPublication)" class = "btn btn-primary">
+    update
+
+  </button>
+
+</Div>
+
 </ul>
 

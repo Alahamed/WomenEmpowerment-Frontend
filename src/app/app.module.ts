@@ -10,6 +10,10 @@ import { FooterComponent } from './Components/footer/footer.component';
 import { EventsComponent } from './Pages/events/events.component';
 import { AcceuilComponent } from './Pages/acceuil/acceuil.component';
 import {HttpClientModule} from "@angular/common/http";
+import { CreatePostComponent } from './Pages/create-post/create-post.component';
+import { UpdatePostComponent } from './Pages/update-post/update-post.component';
+import {FormsModule} from "@angular/forms";
+
 
 
 @NgModule({
@@ -21,11 +25,14 @@ import {HttpClientModule} from "@angular/common/http";
     FooterComponent,
     EventsComponent,
     AcceuilComponent,
+    CreatePostComponent,
+    UpdatePostComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

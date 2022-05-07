@@ -6,9 +6,23 @@ import {Post} from "../models/post";
   providedIn: 'root'
 })
 export class postsService {
-  usersUrl="http://localhost:8081/SpringMVC/servlet/getAllUserNamesJPQL";
+
   constructor(private _http:HttpClient) { }
+
   getPosts() : Observable<Post[]>{
     return this._http.get<Post[]>("http://localhost:8089/SpringMVC/Publication/retrieve-all-pubs");
   }
+  createPost(post: Post) : Observable<Object>{
+    return this._http.post("http://localhost:8089/SpringMVC/Publication/add-pub",post);
+  }
+  getPostById(idPublication:number) : Observable<Post> {
+    return this._http.get<Post>("http://localhost:8089/SpringMVC/Publication/retrieve-pub/"+idPublication);
+  }
+  updatePost(post: Post)  : Observable<Object>{
+    return this._http.put("http://localhost:8089/SpringMVC/Publication/modify-pub",post);
+  }
+  deletePost(idPublication) : Observable<Object> {
+    return this._http.delete("http://localhost:8089/SpringMVC/Publication/remove-pub/" +idPublication);
+  }
+
 }

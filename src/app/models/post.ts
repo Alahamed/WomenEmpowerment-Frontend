@@ -6,14 +6,10 @@ export class Post {
   state: string;
   time: time ;
 
+constructor() {
+}
 
-  constructor(date: Date, idPublication: number, post: string, state: string, time: time) {
-    this.date = date;
-    this.idPublication = idPublication;
-    this.post = post;
-    this.state = state;
-    this.time = time;
-  }
+
 }
 
 export  class  time {
